@@ -1,0 +1,629 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Publications & Research | NEXCIV</title>
+
+    <style>
+        :root {
+            --pink: #C77B96;
+            --light-pink: #F8DCE5;
+            --baby-pink: #F4C2D0;
+            --white: #FFFFFF;
+            --dark: #29252A;
+            --gray: #6F6870;
+            --border: #F0DCE4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--white);
+            color: var(--dark);
+            line-height: 1.7;
+        }
+
+        /* Navigation */
+
+        header {
+            background: var(--white);
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #f1e5ea;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            color: var(--pink);
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: var(--pink);
+        }
+
+        /* Hero */
+
+        .hero {
+            text-align: center;
+            padding: 85px 20px;
+            background: var(--light-pink);
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: auto;
+            color: var(--gray);
+        }
+
+        /* Sections */
+
+        .section {
+            padding: 65px 8%;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-heading h2 {
+            font-size: 29px;
+            margin-bottom: 8px;
+        }
+
+        .section-heading p {
+            color: var(--gray);
+        }
+
+        /* Publication Cards */
+
+        .publication-container {
+            max-width: 1000px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .publication-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--pink);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 18px rgba(100, 50, 70, 0.05);
+            transition: 0.3s ease;
+        }
+
+        .publication-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 9px 22px rgba(100, 50, 70, 0.09);
+        }
+
+        .publication-type {
+            display: inline-block;
+            background: var(--light-pink);
+            color: #8F5068;
+            padding: 5px 13px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .status {
+            display: inline-block;
+            background: #FFF0D8;
+            color: #94621B;
+            padding: 5px 13px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .publication-card h3 {
+            font-size: 20px;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .publication-source {
+            color: var(--pink);
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .publication-meta {
+            font-size: 13px;
+            color: var(--gray);
+            margin-bottom: 8px;
+        }
+
+        .publication-meta strong {
+            color: var(--dark);
+        }
+
+        .synopsis {
+            margin-top: 18px;
+        }
+
+        .synopsis h4 {
+            font-size: 15px;
+            margin-bottom: 7px;
+        }
+
+        .synopsis p {
+            font-size: 14px;
+            color: var(--gray);
+            text-align: justify;
+        }
+
+        .publication-links {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-top: 22px;
+        }
+
+        .publication-links a {
+            color: var(--pink);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .publication-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Ongoing Projects */
+
+        .ongoing-section {
+            background: #FFFAFC;
+        }
+
+        .project-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--pink);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 18px rgba(100, 50, 70, 0.05);
+        }
+
+        .project-card h3 {
+            font-size: 20px;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .project-card .publication-meta {
+            margin-top: 10px;
+        }
+
+        /* Collaboration */
+
+        .collaboration {
+            text-align: center;
+            padding: 60px 20px;
+            background: var(--light-pink);
+        }
+
+        .collaboration h2 {
+            margin-bottom: 12px;
+        }
+
+        .collaboration p {
+            max-width: 700px;
+            margin: auto;
+            color: var(--gray);
+        }
+
+        /* Footer */
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: var(--dark);
+            color: var(--white);
+            font-size: 13px;
+        }
+
+        @media (max-width: 650px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 14px;
+            }
+
+            .hero h1 {
+                font-size: 31px;
+            }
+
+            .section {
+                padding: 45px 6%;
+            }
+
+            .publication-card,
+            .project-card {
+                padding: 22px;
+            }
+
+            .publication-card h3,
+            .project-card h3 {
+                font-size: 18px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+
+<header>
+
+    <div class="logo">NEXCIV</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="team.html">Team</a>
+        <a href="publications.html">Publications</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+
+</header>
+
+
+<!-- Hero Section -->
+
+<section class="hero">
+
+    <h1>Publications & Research Projects</h1>
+
+    <p>
+        Showcasing scholarly publications, conference contributions,
+        and ongoing research initiatives across multidisciplinary
+        civil engineering.
+    </p>
+
+</section>
+
+
+<!-- Journal Publications -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <h2>Journal Publications</h2>
+
+        <p>
+            Peer-reviewed journal articles and scholarly research contributions
+        </p>
+
+    </div>
+
+
+    <div class="publication-container">
+
+        <!-- Journal Paper 1 -->
+
+        <div class="publication-card">
+
+            <span class="publication-type">
+                Journal Article
+            </span>
+
+            <h3>
+                Comparative Assessment of Structural Slab Systems in Mid-Rise
+                Construction: Structural Performance Analysis Upon Load
+                Response Using ETABS
+            </h3>
+
+            <div class="publication-source">
+                International Journal of Scientific Research in Civil
+                Engineering (IJSRCE)
+            </div>
+
+            <div class="publication-meta">
+                <strong>Year:</strong> 2026
+            </div>
+
+            <div class="publication-meta">
+                <strong>Authors:</strong>
+                Puja Saha (Corresponding Author), Raisa Ferdousi,
+                Tomal Roy, SK Labiba Amin, and
+                Prof. Dr. Md. Mahmudur Rahman
+            </div>
+
+            <div class="synopsis">
+
+                <h4>Synopsis</h4>
+
+                <p>
+                    Developed and comparatively analyzed ETABS models of a
+                    G+5 parking structure incorporating flat plate,
+                    one-way ribbed, and waffle slab systems under gravity
+                    and lateral loads, following BNBC 2020-based design
+                    criteria. The waffle slab achieved 25.61–34.00% lower
+                    slab deflection than the flat plate, while the one-way
+                    ribbed slab reduced concrete consumption by 14.53%
+                    and base shear by 24.88%, highlighting the trade-off
+                    between structural performance and material efficiency.
+                </p>
+
+            </div>
+
+            <div class="publication-meta" style="margin-top: 15px;">
+                <strong>DOI:</strong>
+                10.5281/ZENODO.23891511
+            </div>
+
+            <div class="publication-links">
+
+                <a href="https://doi.org/10.5281/zenodo.23891511"
+                   target="_blank" rel="noopener noreferrer">
+                    View DOI
+                </a>
+
+                <a href="https://www.researchgate.net/publication/417410659_Comparative_Assessment_of_Structural_Slab_Systems_in_Mid-Rise_Construction_Structural_Performance_Analysis_Upon_Load_Response_"
+                   target="_blank" rel="noopener noreferrer">
+                    View Publication on ResearchGate
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Conference Publications -->
+
+<section class="section ongoing-section">
+
+    <div class="section-heading">
+
+        <h2>Conference Publications</h2>
+
+        <p>
+            Research papers presented at international academic conferences
+        </p>
+
+    </div>
+
+
+    <div class="publication-container">
+
+        <!-- Conference Paper 1 -->
+
+        <div class="publication-card">
+
+            <span class="publication-type">
+                Conference Paper
+            </span>
+
+            <h3>
+                Comparative Analysis of Traffic Flow Characteristics in
+                Turbo-Roundabout and Conventional Roundabout:
+                An Approach in VISSIM-Based Traffic Flow Simulation
+            </h3>
+
+            <div class="publication-source">
+                8th International Conference on Civil Engineering
+                for Sustainable Development (ICCESD 2026)
+            </div>
+
+            <div class="publication-meta">
+                <strong>Year:</strong> 2026
+            </div>
+
+            <div class="publication-meta">
+                <strong>Authors:</strong>
+                Tomal Roy, Puja Saha (Second Author),
+                Raisa Ferdousi, and Sadia Mohsin
+            </div>
+
+            <div class="synopsis">
+
+                <h4>Synopsis</h4>
+
+                <p>
+                    Developed and calibrated a PTV VISSIM microsimulation
+                    model (GEH = 1.43) to compare conventional and
+                    turbo-roundabout performance under heterogeneous
+                    traffic conditions at Mirpur-10, Dhaka. The
+                    turbo-roundabout reduced average delay by 57%,
+                    travel time by 53%, and CO emissions by approximately
+                    30%, demonstrating improved traffic efficiency.
+                </p>
+
+            </div>
+
+            <div class="publication-links">
+
+                <a href="https://www.researchgate.net/publication/403331769_COMPARATIVE_ANALYSIS_OF_TRAFFIC_FLOW_CHARACTERISTICS_IN_TURBO-ROUNDABOUT_AND_CONVENTIONAL_ROUNDABOUT_AN"
+                   target="_blank" rel="noopener noreferrer">
+                    View Conference Paper on ResearchGate
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Ongoing Research Projects -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <h2>Ongoing Research Projects</h2>
+
+        <p>
+            Current experimental and computational research investigations
+        </p>
+
+    </div>
+
+
+    <div class="publication-container">
+
+        <!-- Ongoing Research 1 -->
+
+        <div class="project-card">
+
+            <span class="status">
+                Ongoing Research
+            </span>
+
+            <h3>
+                Experimental Investigation of Sustainable Concrete
+                Composites Incorporating Eggshell Powder and Jute Fiber:
+                Mechanical Performance and Durability
+            </h3>
+
+            <div class="publication-meta">
+                <strong>Authors:</strong>
+                Md. Rahatul Islam, Puja Saha, Imran Najir Shoun,
+                Niloy Kumar Roy, and Saif Ahmed Santo
+            </div>
+
+            <div class="synopsis">
+
+                <h4>Synopsis</h4>
+
+                <p>
+                    Experimentally investigated 135 concrete specimens
+                    incorporating eggshell powder (1.5%, 2.5%) and
+                    jute fibers (0.15%, 0.35%). Evaluated fresh,
+                    mechanical, and durability properties through slump,
+                    compressive strength (3, 14, 28 days), split tensile,
+                    flexural, water absorption, porosity, and electrical
+                    resistivity tests, with preliminary results showing
+                    up to 30.12% higher compressive strength.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Ongoing Research 2 -->
+
+        <div class="project-card">
+
+            <span class="status">
+                Ongoing Research
+            </span>
+
+            <h3>
+                Optimizing Rural Disaster Evacuation Using Shared
+                Autonomous Vehicles: A Simulation-Based Approach
+                for Vulnerable Communities
+            </h3>
+
+            <div class="publication-meta">
+                <strong>Authors:</strong>
+                Puja Saha and Muhammad Fatih Yentimur
+            </div>
+
+            <div class="synopsis">
+
+                <h4>Research Focus</h4>
+
+                <p>
+                    This ongoing research explores simulation-based
+                    strategies for optimizing rural disaster evacuation
+                    through shared autonomous vehicles, with an emphasis
+                    on improving evacuation efficiency and accessibility
+                    for vulnerable communities.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Collaboration -->
+
+<section class="collaboration">
+
+    <h2>Research Collaboration</h2>
+
+    <p>
+        NEXCIV encourages interdisciplinary research,
+        academic collaboration, and the development of
+        innovative engineering solutions through
+        scholarly exchange and collaborative initiatives.
+    </p>
+
+</section>
+
+
+<!-- Footer -->
+
+<footer>
+
+    © 2026 NEXCIV | Next-Generation Civil Engineering Research Laboratory
+
+</footer>
+
+</body>
+</html>
