@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Team | NEXCIV</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --pink: #F4C2D0;
+    --light-pink: #FDF2F5;
+    --deep-pink: #C77B96;
+    --dark: #393039;
+    --white: #FFFFFF;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--dark);
+    background: white;
+    line-height: 1.7;
+}
+
+header {
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.97);
+    border-bottom: 1px solid #F4E5EA;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--dark);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--deep-pink);
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #514650;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--deep-pink);
+}
+
+.hero {
+    background: linear-gradient(120deg, #FDF2F5, #FFFFFF);
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.eyebrow {
+    color: var(--deep-pink);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 6vw, 65px);
+    margin: 18px 0;
+}
+
+.hero h1 span {
+    color: var(--deep-pink);
+}
+
+.hero p {
+    max-width: 680px;
+    margin: auto;
+    color: #716570;
+    font-size: 16px;
+}
+
+.team-section {
+    padding: 75px 8%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    margin: 10px 0;
+}
+
+.section-heading p {
+    color: #817580;
+    max-width: 650px;
+    margin: auto;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.team-card {
+    border: 1px solid #F0DDE4;
+    border-radius: 12px;
+    padding: 28px 24px;
+    text-align: center;
+    background: white;
+    transition: 0.3s;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(160, 105, 125, 0.10);
+    border-color: var(--pink);
+}
+
+.photo-placeholder {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: var(--light-pink);
+    border: 2px solid var(--pink);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--deep-pink);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.team-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    margin-bottom: 5px;
+}
+
+.designation {
+    color: var(--deep-pink);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.team-card p {
+    color: #817580;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.empty-message {
+    border: 1px dashed #E8C5D1;
+    background: #FDF8FA;
+    border-radius: 12px;
+    padding: 28px;
+    text-align: center;
+    color: #817580;
+    font-size: 14px;
+    grid-column: 1 / -1;
+}
+
+.intro {
+    background: var(--light-pink);
+    padding: 65px 8%;
+    text-align: center;
+}
+
+.intro h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.intro p {
+    max-width: 750px;
+    margin: auto;
+    color: #716570;
+}
+
+footer {
+    background: #FAF5F7;
+    text-align: center;
+    padding: 30px 8%;
+    color: #817580;
+    font-size: 13px;
+    border-top: 1px solid #F0E4E9;
+}
+
+.footer-logo {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--dark);
+    margin-bottom: 8px;
+}
+
+.footer-logo span {
+    color: var(--deep-pink);
+}
+
+@media (max-width: 850px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 14px;
+        padding: 17px 5%;
+    }
+
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 70px 6%;
+    }
+
+    .team-section {
+        padding: 60px 6%;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="index.html" class="logo">NEX<span>CIV</span></a>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="team.html" class="active">Team</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="eyebrow">The People Behind NEXCIV</div>
+    <h1>Meet Our <span>Team</span></h1>
+    <p>
+        A collaborative research community bringing together
+        academic guidance, research experience, and emerging
+        talent across multiple civil engineering disciplines.
+    </p>
+</section>
+
+<section class="team-section">
+    <div class="section-heading">
+        <div class="eyebrow">Academic Guidance</div>
+        <h2>Academic Advisors</h2>
+        <p>
+            Academic mentorship and guidance supporting
+            research development and scholarly activities.
+        </p>
+    </div>
+
+    <div class="team-grid">
+        <div class="empty-message">
+            Academic advisor profiles will be added here.
+        </div>
+    </div>
+</section>
+
+<section class="team-section" style="background:#FDF9FA;">
+    <div class="section-heading">
+        <div class="eyebrow">Advanced Research</div>
+        <h2>Graduate Researchers</h2>
+        <p>
+            Graduate-level researchers contributing to
+            multidisciplinary research and academic exploration.
+        </p>
+    </div>
+
+    <div class="team-grid">
+        <div class="empty-message">
+            Graduate researcher profiles will be added here.
+        </div>
+    </div>
+</section>
+
+<section class="team-section">
+    <div class="section-heading">
+        <div class="eyebrow">Research Collaboration</div>
+        <h2>Research Associates</h2>
+        <p>
+            Research collaborators supporting scientific inquiry,
+            technical development, and interdisciplinary initiatives.
+        </p>
+    </div>
+
+    <div class="team-grid">
+        <div class="empty-message">
+            Research associate profiles will be added here.
+        </div>
+    </div>
+</section>
+
+<section class="team-section" style="background:#FDF9FA;">
+    <div class="section-heading">
+        <div class="eyebrow">Emerging Researchers</div>
+        <h2>Student Researchers</h2>
+        <p>
+            Undergraduate researchers developing their research
+            interests and contributing to academic activities.
+        </p>
+    </div>
+
+    <div class="team-grid">
+        <div class="empty-message">
+            Student researcher profiles will be added here.
+        </div>
+    </div>
+</section>
+
+<section class="intro">
+    <div class="eyebrow">One Research Community</div>
+    <h2>Collaboration Beyond Boundaries</h2>
+    <p>
+        NEXCIV encourages academic exchange, interdisciplinary
+        collaboration, and research engagement to advance
+        knowledge and innovation in civil engineering.
+    </p>
+</section>
+
+<footer>
+    <div class="footer-logo">NEX<span>CIV</span></div>
+    <p>Independent Multidisciplinary Civil Engineering Research Laboratory</p>
+    <p>Engineering Tomorrow, Through Research Today.</p>
+    <p style="margin-top:15px;">© 2026 NEXCIV. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
