@@ -80,6 +80,8 @@ nav a.active {
     color: var(--deep-pink);
 }
 
+/* HERO */
+
 .hero {
     background: linear-gradient(120deg, #FDF2F5, #FFFFFF);
     padding: 100px 8%;
@@ -111,18 +113,20 @@ nav a.active {
     font-size: 16px;
 }
 
+/* TEAM SECTIONS */
+
 .team-section {
-    padding: 75px 8%;
+    padding: 80px 8%;
 }
 
 .section-heading {
     text-align: center;
-    margin-bottom: 35px;
+    margin-bottom: 45px;
 }
 
 .section-heading h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 34px;
+    font-size: 35px;
     margin: 10px 0;
 }
 
@@ -134,79 +138,139 @@ nav a.active {
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 340px));
+    justify-content: center;
+    gap: 28px;
 }
+
+/* PROFILE CARD */
 
 .team-card {
     border: 1px solid #F0DDE4;
-    border-radius: 12px;
-    padding: 28px 24px;
+    border-radius: 14px;
+    padding: 32px 27px;
     text-align: center;
     background: white;
-    transition: 0.3s;
+    transition: 0.3s ease;
+    width: 100%;
 }
 
 .team-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(160, 105, 125, 0.10);
+    box-shadow: 0 14px 32px rgba(160, 105, 125, 0.10);
     border-color: var(--pink);
 }
 
-.photo-placeholder {
-    width: 110px;
-    height: 110px;
-    margin: 0 auto 18px;
+/* PROFILE IMAGE */
+
+.profile-image-wrapper {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 20px;
     border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--pink);
     background: var(--light-pink);
-    border: 2px solid var(--pink);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--deep-pink);
-    font-size: 13px;
-    font-weight: 600;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center center;
 }
 
 .team-card h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 21px;
+    font-size: 25px;
     margin-bottom: 5px;
 }
 
 .designation {
     color: var(--deep-pink);
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 700;
 }
 
-.team-card p {
+.affiliation {
     color: #817580;
     font-size: 13px;
-    margin-top: 12px;
+    margin-top: 8px;
 }
+
+.interest-heading {
+    color: var(--deep-pink);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: left;
+    margin-top: 25px;
+    margin-bottom: 12px;
+}
+
+.interest-list {
+    text-align: left;
+    padding-left: 19px;
+    color: #716570;
+    font-size: 13px;
+}
+
+.interest-list li {
+    margin-bottom: 7px;
+}
+
+/* PROFILE LINKS */
+
+.profile-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+    padding-top: 18px;
+    border-top: 1px solid #F3E5EA;
+}
+
+.profile-links a {
+    color: var(--deep-pink);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.profile-links a:hover {
+    color: #AD647F;
+    text-decoration: underline;
+}
+
+/* EMPTY SECTIONS */
 
 .empty-message {
     border: 1px dashed #E8C5D1;
     background: #FDF8FA;
     border-radius: 12px;
-    padding: 28px;
+    padding: 30px;
     text-align: center;
     color: #817580;
     font-size: 14px;
     grid-column: 1 / -1;
 }
 
+/* COLLABORATION */
+
 .intro {
     background: var(--light-pink);
-    padding: 65px 8%;
+    padding: 75px 8%;
     text-align: center;
 }
 
 .intro h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    margin-bottom: 15px;
+    font-size: 34px;
+    margin: 12px 0;
 }
 
 .intro p {
@@ -215,10 +279,12 @@ nav a.active {
     color: #716570;
 }
 
+/* FOOTER */
+
 footer {
     background: #FAF5F7;
     text-align: center;
-    padding: 30px 8%;
+    padding: 32px 8%;
     color: #817580;
     font-size: 13px;
     border-top: 1px solid #F0E4E9;
@@ -236,13 +302,9 @@ footer {
     color: var(--deep-pink);
 }
 
-@media (max-width: 850px) {
-    .team-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+/* RESPONSIVE */
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     header {
         flex-direction: column;
         gap: 14px;
@@ -250,7 +312,7 @@ footer {
     }
 
     nav {
-        gap: 15px;
+        gap: 16px;
         flex-wrap: wrap;
         justify-content: center;
     }
@@ -270,18 +332,13 @@ footer {
     .team-grid {
         grid-template-columns: 1fr;
     }
+
+    .team-card {
+        max-width: 400px;
+        margin: auto;
+    }
 }
 </style>
-    .profile-photo {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center;
-    margin: 0 auto 18px;
-    border: 2px solid #F4C2D0;
-    display: block;
-}
 </head>
 
 <body>
@@ -298,9 +355,13 @@ footer {
     </nav>
 </header>
 
+<!-- HERO -->
+
 <section class="hero">
     <div class="eyebrow">The People Behind NEXCIV</div>
+
     <h1>Meet Our <span>Team</span></h1>
+
     <p>
         A collaborative research community bringing together
         academic guidance, research experience, and emerging
@@ -308,7 +369,10 @@ footer {
     </p>
 </section>
 
+<!-- ACADEMIC ADVISORS -->
+
 <section class="team-section">
+
     <div class="section-heading">
         <div class="eyebrow">Academic Guidance</div>
         <h2>Academic Advisors</h2>
@@ -323,9 +387,13 @@ footer {
             Academic advisor profiles will be added here.
         </div>
     </div>
+
 </section>
 
+<!-- GRADUATE RESEARCHERS -->
+
 <section class="team-section" style="background:#FDF9FA;">
+
     <div class="section-heading">
         <div class="eyebrow">Advanced Research</div>
         <h2>Graduate Researchers</h2>
@@ -335,74 +403,85 @@ footer {
         </p>
     </div>
 
-   
-<div class="team-grid">
+    <div class="team-grid">
 
-    <div class="team-card">
-<img
-    src="images/puja-saha.jpg"
-    alt="Puja Saha"
-    class="profile-photo"
->
+        <!-- PUJA SAHA PROFILE -->
 
-        <h3>Puja Saha</h3>
+        <div class="team-card">
 
-        <div class="designation">Graduate Researcher</div>
+            <div class="profile-image-wrapper">
+                <img
+                    src="images/puja-saha.jpg"
+                    alt="Puja Saha - Graduate Researcher at NEXCIV"
+                    class="profile-photo"
+                >
+            </div>
 
-        <p>
-            Ahsanullah University of Science &amp; Technology
-        </p>
+            <h3>Puja Saha</h3>
 
-        <h4 style="color:#C77B96; margin-top:20px; font-size:13px;">
-            Research Interests
-        </h4>
+            <div class="designation">
+                Graduate Researcher
+            </div>
 
-        <ul style="text-align:left; padding-left:20px; color:#716570; font-size:13px; margin-top:10px;">
-            <li>Structural Performance Assessment</li>
-            <li>Sustainable and Innovative Building Materials</li>
-            <li>Computational Structural Analysis</li>
-            <li>Structural Modeling and Simulation</li>
-            <li>Innovative and Hybrid Structural Systems</li>
-            <li>Composite Structural Systems</li>
-            <li>Microscopic Traffic Simulation</li>
-            <li>Traffic Flow Modeling and Analysis</li>
-            <li>Sustainable Transportation Systems</li>
-        </ul>
+            <p class="affiliation">
+                Ahsanullah University of Science &amp; Technology
+            </p>
 
-        <div style="margin-top:20px; display:flex; flex-wrap:wrap; justify-content:center; gap:12px; font-size:13px;">
+            <h4 class="interest-heading">
+                Research Interests
+            </h4>
 
-            <a href="mailto:pujasahapuja302@gmail.com"
-               style="color:#C77B96; text-decoration:none;">
-                Email
-            </a>
+            <ul class="interest-list">
+                <li>Structural Performance Assessment</li>
+                <li>Sustainable and Innovative Building Materials</li>
+                <li>Computational Structural Analysis</li>
+                <li>Structural Modeling and Simulation</li>
+                <li>Innovative and Hybrid Structural Systems</li>
+                <li>Composite Structural Systems</li>
+                <li>Microscopic Traffic Simulation</li>
+                <li>Traffic Flow Modeling and Analysis</li>
+                <li>Sustainable Transportation Systems</li>
+            </ul>
 
-            <a href="https://www.linkedin.com/in/puja-saha-ce/"
-               target="_blank" rel="noopener noreferrer"
-               style="color:#C77B96; text-decoration:none;">
-                LinkedIn
-            </a>
+            <div class="profile-links">
 
-            <a href="https://www.researchgate.net/profile/Puja-Saha-23"
-               target="_blank" rel="noopener noreferrer"
-               style="color:#C77B96; text-decoration:none;">
-                ResearchGate
-            </a>
+                <a href="mailto:pujasahapuja302@gmail.com">
+                    Email
+                </a>
 
-            <a href="https://orcid.org/0009-0001-3698-7092"
-               target="_blank" rel="noopener noreferrer"
-               style="color:#C77B96; text-decoration:none;">
-                ORCID
-            </a>
+                <a
+                    href="https://www.linkedin.com/in/puja-saha-ce/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    LinkedIn
+                </a>
+
+                <a
+                    href="https://www.researchgate.net/profile/Puja-Saha-23"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    ResearchGate
+                </a>
+
+                <a
+                    href="https://orcid.org/0009-0001-3698-7092"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    ORCID
+                </a>
+
+            </div>
 
         </div>
 
     </div>
 
-</div>
-
 </section>
 
+<!-- RESEARCH ASSOCIATES -->
+
 <section class="team-section">
+
     <div class="section-heading">
         <div class="eyebrow">Research Collaboration</div>
         <h2>Research Associates</h2>
@@ -417,9 +496,13 @@ footer {
             Research associate profiles will be added here.
         </div>
     </div>
+
 </section>
 
+<!-- STUDENT RESEARCHERS -->
+
 <section class="team-section" style="background:#FDF9FA;">
+
     <div class="section-heading">
         <div class="eyebrow">Emerging Researchers</div>
         <h2>Student Researchers</h2>
@@ -434,23 +517,45 @@ footer {
             Student researcher profiles will be added here.
         </div>
     </div>
+
 </section>
 
+<!-- COLLABORATION -->
+
 <section class="intro">
+
     <div class="eyebrow">One Research Community</div>
+
     <h2>Collaboration Beyond Boundaries</h2>
+
     <p>
         NEXCIV encourages academic exchange, interdisciplinary
         collaboration, and research engagement to advance
         knowledge and innovation in civil engineering.
     </p>
+
 </section>
 
+<!-- FOOTER -->
+
 <footer>
-    <div class="footer-logo">NEX<span>CIV</span></div>
-    <p>Independent Multidisciplinary Civil Engineering Research Laboratory</p>
-    <p>Engineering Tomorrow, Through Research Today.</p>
-    <p style="margin-top:15px;">© 2026 NEXCIV. All Rights Reserved.</p>
+
+    <div class="footer-logo">
+        NEX<span>CIV</span>
+    </div>
+
+    <p>
+        Independent Multidisciplinary Civil Engineering Research Laboratory
+    </p>
+
+    <p>
+        Engineering Tomorrow, Through Research Today.
+    </p>
+
+    <p style="margin-top:15px;">
+        © 2026 NEXCIV. All Rights Reserved.
+    </p>
+
 </footer>
 
 </body>
