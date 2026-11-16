@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXCIV | Civil Engineering Research Laboratory</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      color: #44343c;
+      background: #fff;
+      line-height: 1.7;
+    }
+    header {
+      background: #fff;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #f4dce5;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .logo { color: #c77b96; font-size: 30px; font-weight: bold; }
+    nav a {
+      color: #44343c;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+    .hero {
+      background: #f8dce5;
+      padding: 110px 8%;
+      text-align: center;
+    }
+    .hero h1 { font-size: clamp(34px, 5vw, 56px); color: #754c60; }
+    .hero p { max-width: 700px; margin: 20px auto; }
+    .tagline { color: #a45e7c; font-weight: bold; }
+    .btn {
+      display: inline-block;
+      background: #c77b96;
+      color: white;
+      padding: 12px 28px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+    section { padding: 75px 8%; }
+    h2 {
+      color: #a45e7c;
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+    .center { text-align: center; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+      margin-top: 35px;
+    }
+    .card {
+      padding: 28px;
+      background: #fff8fa;
+      border: 1px solid #f4dce5;
+      border-radius: 10px;
+    }
+    .card h3 { color: #a45e7c; margin-bottom: 12px; }
+    .soft { background: #fff8fa; }
+    footer {
+      background: #754c60;
+      color: white;
+      text-align: center;
+      padding: 30px 8%;
+    }
+    @media(max-width: 650px) {
+      header { justify-content: center; }
+      nav { text-align: center; }
+      nav a { display: inline-block; margin: 5px 8px; }
+      .hero { padding: 75px 7%; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">NEXCIV</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#vision">Vision</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="hero" id="home">
+  <h1>Advancing Civil Engineering Through Research and Innovation</h1>
+  <p>NEXCIV is an independent multidisciplinary civil engineering research laboratory exploring emerging engineering challenges through scientific investigation and collaboration.</p>
+  <div class="tagline">Engineering Tomorrow, Through Research Today.</div>
+  <a class="btn" href="#research">Explore Our Research</a>
+</div>
+
+<section id="about">
+  <h2>About NEXCIV</h2>
+  <p>NEXCIV (Next-Generation Civil Engineering Research Laboratory) is an independent multidisciplinary research initiative focused on exploring emerging challenges and advancing knowledge across diverse fields of civil engineering. Guided by academic mentorship and driven by research-oriented collaboration, NEXCIV aims to foster scientific inquiry, develop innovative engineering approaches, and contribute to sustainable infrastructure development.</p>
+</section>
+
+<section class="soft" id="research">
+  <h2 class="center">Research Divisions</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Structural Engineering</h3>
+      <p>Structural behavior, computational modeling, performance evaluation and innovative structural systems.</p>
+    </div>
+    <div class="card">
+      <h3>Transportation Engineering</h3>
+      <p>Traffic operations, transportation planning, pavement performance and intelligent mobility.</p>
+    </div>
+    <div class="card">
+      <h3>Water Resources Engineering</h3>
+      <p>Hydrology, hydraulics, flood risk assessment and sustainable water management.</p>
+    </div>
+    <div class="card">
+      <h3>Construction Materials</h3>
+      <p>Concrete technology, sustainable materials and experimental performance evaluation.</p>
+    </div>
+  </div>
+</section>
+
+<section id="vision">
+  <h2>Our Vision</h2>
+  <p>To become a recognized multidisciplinary research laboratory contributing to the advancement of civil engineering through innovative research, scientific excellence and interdisciplinary collaboration.</p>
+</section>
+
+<section class="soft">
+  <h2>Our Mission</h2>
+  <ul>
+    <li>Promote research and innovation across civil engineering disciplines.</li>
+    <li>Encourage collaboration among students, researchers and academic professionals.</li>
+    <li>Explore engineering challenges through analytical, numerical and experimental investigations.</li>
+    <li>Contribute to sustainable and resilient infrastructure development.</li>
+    <li>Disseminate research findings through scholarly publications.</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>Join Our Research Community</h2>
+  <p>Interested in research, academic collaboration or contributing to NEXCIV? Get in touch with us.</p>
+  <p>Contact: Email address coming soon.</p>
+</section>
+
+<footer>
+  <p>NEXCIV | Independent Multidisciplinary Civil Engineering Research Laboratory</p>
+  <p>Engineering Tomorrow, Through Research Today.</p>
+  <p>© 2026 NEXCIV. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
