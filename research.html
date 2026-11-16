@@ -4,113 +4,442 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Research | NEXCIV</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;color:#493943;line-height:1.8}
-header{padding:20px 8%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;border-bottom:1px solid #f4dce5}
-.logo{font-size:29px;font-weight:bold;color:#c77b96}
-nav a{margin-left:20px;text-decoration:none;color:#493943;font-size:14px}
-.hero{background:#f8dce5;text-align:center;padding:75px 8%}
-.hero h1{font-size:42px;color:#754c60}
-.hero p{margin-top:12px}
-main{max-width:1100px;margin:auto;padding:65px 25px}
-.intro{text-align:center;max-width:800px;margin:0 auto 45px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
-.card{background:#fff8fa;border:1px solid #f2d8e2;border-radius:10px;padding:28px}
-.card h2{font-size:22px;color:#a45e7c;margin-bottom:12px}
-.card h3{font-size:15px;color:#754c60;margin-top:18px;margin-bottom:7px}
-.card ul{padding-left:20px}
-footer{background:#754c60;color:white;text-align:center;padding:30px}
-@media(max-width:600px){
-header{justify-content:center}
-nav{text-align:center}
-nav a{display:inline-block;margin:5px 8px}
-.hero h1{font-size:32px}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: #393039;
+    background: #FFFFFF;
+    line-height: 1.7;
+}
+
+:root {
+    --pink: #F4C2D0;
+    --light-pink: #FDF2F5;
+    --deep-pink: #C77B96;
+    --dark: #393039;
+    --white: #FFFFFF;
+}
+
+header {
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.96);
+    border-bottom: 1px solid #F4E5EA;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--dark);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--deep-pink);
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #514650;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--deep-pink);
+}
+
+.hero {
+    background: linear-gradient(120deg, #FDF2F5, #FFFFFF);
+    padding: 105px 8% 100px;
+    text-align: center;
+}
+
+.eyebrow {
+    color: var(--deep-pink);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 6vw, 66px);
+    margin: 18px 0;
+    color: var(--dark);
+}
+
+.hero h1 span {
+    color: var(--deep-pink);
+}
+
+.hero p {
+    max-width: 690px;
+    margin: auto;
+    color: #716570;
+    font-size: 16px;
+}
+
+.section {
+    padding: 85px 8%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    color: var(--dark);
+    margin-bottom: 12px;
+}
+
+.section-heading p {
+    color: #817580;
+    max-width: 650px;
+    margin: auto;
+}
+
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.research-card {
+    padding: 35px;
+    background: #FFFFFF;
+    border: 1px solid #F0DDE4;
+    border-radius: 14px;
+    transition: 0.3s ease;
+}
+
+.research-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(160, 105, 125, 0.10);
+    border-color: var(--pink);
+}
+
+.card-number {
+    color: var(--deep-pink);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.research-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    margin: 15px 0;
+    color: var(--dark);
+}
+
+.research-card p {
+    color: #716570;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.research-card h4 {
+    font-size: 12px;
+    color: var(--deep-pink);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.research-card ul {
+    padding-left: 19px;
+    color: #716570;
+    font-size: 14px;
+}
+
+.research-card li {
+    margin-bottom: 7px;
+}
+
+.philosophy {
+    background: var(--light-pink);
+    text-align: center;
+    padding: 80px 8%;
+}
+
+.philosophy h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.philosophy p {
+    max-width: 760px;
+    margin: auto;
+    color: #716570;
+}
+
+.collaboration {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.collaboration h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.collaboration p {
+    max-width: 650px;
+    margin: 0 auto 28px;
+    color: #716570;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 13px 30px;
+    background: var(--deep-pink);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.contact-button:hover {
+    background: #AD647F;
+}
+
+footer {
+    background: #FAF5F7;
+    text-align: center;
+    padding: 30px 8%;
+    color: #817580;
+    font-size: 13px;
+    border-top: 1px solid #F0E4E9;
+}
+
+.footer-logo {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--dark);
+    margin-bottom: 8px;
+}
+
+.footer-logo span {
+    color: var(--deep-pink);
+}
+
+@media (max-width: 700px) {
+    header {
+        padding: 17px 5%;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    nav {
+        gap: 17px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 75px 6%;
+    }
+
+    .section {
+        padding: 65px 6%;
+    }
+
+    .research-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .research-card {
+        padding: 27px;
+    }
 }
 </style>
 </head>
+
 <body>
 
 <header>
-<div class="logo">NEXCIV</div>
-<nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="research.html">Research</a>
-<a href="index.html#contact">Contact</a>
-</nav>
+    <a href="index.html" class="logo">NEX<span>CIV</span></a>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="research.html" class="active">Research</a>
+        <a href="index.html#vision">Vision</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
 </header>
 
 <section class="hero">
-<h1>Research at NEXCIV</h1>
-<p>Exploring Engineering Challenges Through Multidisciplinary Research</p>
+    <div class="eyebrow">Explore Our Research</div>
+
+    <h1>Research at <span>NEXCIV</span></h1>
+
+    <p>
+        Advancing civil engineering through interdisciplinary research,
+        scientific inquiry, and innovative engineering perspectives.
+    </p>
 </section>
 
-<main>
-<div class="intro">
-<h2 style="color:#a45e7c;margin-bottom:12px">Our Research Divisions</h2>
-<p>NEXCIV explores emerging challenges in civil engineering through analytical investigation, computational approaches, experimental studies and interdisciplinary collaboration.</p>
-</div>
+<section class="section">
+    <div class="section-heading">
+        <div class="eyebrow">Our Research Divisions</div>
+        <h2>Areas of Research</h2>
+        <p>
+            NEXCIV brings together diverse areas of civil engineering
+            to explore emerging challenges and develop research-driven solutions.
+        </p>
+    </div>
 
-<div class="grid">
+    <div class="research-grid">
 
-<div class="card">
-<h2>01. Structural Engineering</h2>
-<p>Investigating structural behavior, performance and innovative engineering systems.</p>
-<h3>Research Interests</h3>
-<ul>
-<li>Structural analysis and design</li>
-<li>Computational and FEM-based modeling</li>
-<li>Structural performance evaluation</li>
-<li>Innovative and hybrid structural systems</li>
-</ul>
-</div>
+        <div class="research-card">
+            <div class="card-number">01 / DIVISION</div>
+            <h3>Structural Engineering</h3>
+            <p>
+                Exploring structural behavior, performance, and innovative
+                engineering systems through analytical, experimental,
+                and computational approaches.
+            </p>
+            <h4>Research Focus</h4>
+            <ul>
+                <li>Structural behavior and performance evaluation</li>
+                <li>Advanced and hybrid structural systems</li>
+                <li>Finite Element Modeling and computational analysis</li>
+                <li>Innovative structural solutions</li>
+            </ul>
+        </div>
 
-<div class="card">
-<h2>02. Transportation Engineering</h2>
-<p>Exploring efficient, safe and sustainable transportation systems.</p>
-<h3>Research Interests</h3>
-<ul>
-<li>Traffic operations and management</li>
-<li>Transportation planning</li>
-<li>Pavement performance</li>
-<li>Intelligent transportation systems</li>
-</ul>
-</div>
+        <div class="research-card">
+            <div class="card-number">02 / DIVISION</div>
+            <h3>Transportation Engineering</h3>
+            <p>
+                Investigating transportation systems, mobility challenges,
+                and infrastructure performance to support efficient
+                and sustainable transportation.
+            </p>
+            <h4>Research Focus</h4>
+            <ul>
+                <li>Traffic flow and operations</li>
+                <li>Transportation planning and mobility</li>
+                <li>Pavement materials and performance</li>
+                <li>Intelligent transportation systems</li>
+            </ul>
+        </div>
 
-<div class="card">
-<h2>03. Water Resources Engineering</h2>
-<p>Addressing water-related engineering challenges through scientific investigation.</p>
-<h3>Research Interests</h3>
-<ul>
-<li>Hydrology and hydraulics</li>
-<li>Flood risk assessment</li>
-<li>Water resources management</li>
-<li>Sustainable water systems</li>
-</ul>
-</div>
+        <div class="research-card">
+            <div class="card-number">03 / DIVISION</div>
+            <h3>Water Resources Engineering</h3>
+            <p>
+                Studying water systems and hydrological processes
+                to address challenges related to water management,
+                flooding, and hydraulic infrastructure.
+            </p>
+            <h4>Research Focus</h4>
+            <ul>
+                <li>Hydrology and hydraulics</li>
+                <li>Flood risk assessment</li>
+                <li>Water resources management</li>
+                <li>Sustainable water systems</li>
+            </ul>
+        </div>
 
-<div class="card">
-<h2>04. Construction Materials</h2>
-<p>Investigating material properties and advancing sustainable construction technologies.</p>
-<h3>Research Interests</h3>
-<ul>
-<li>Concrete technology</li>
-<li>Sustainable construction materials</li>
-<li>Material characterization</li>
-<li>Experimental performance evaluation</li>
-</ul>
-</div>
+        <div class="research-card">
+            <div class="card-number">04 / DIVISION</div>
+            <h3>Construction Materials</h3>
+            <p>
+                Exploring material properties, innovative construction
+                materials, and sustainable alternatives through
+                scientific investigation and performance evaluation.
+            </p>
+            <h4>Research Focus</h4>
+            <ul>
+                <li>Concrete technology and characterization</li>
+                <li>Sustainable construction materials</li>
+                <li>Experimental material performance</li>
+                <li>Mechanical and durability properties</li>
+            </ul>
+        </div>
 
-</div>
-</main>
+    </div>
+</section>
+
+<section class="philosophy">
+    <div class="eyebrow">Our Approach</div>
+    <h2>Research Philosophy</h2>
+    <p>
+        At NEXCIV, we believe meaningful engineering progress begins
+        with curiosity, rigorous investigation, and collaboration.
+        Our research approach emphasizes scientific understanding,
+        critical evaluation, and the exploration of practical solutions
+        to evolving civil engineering challenges.
+    </p>
+</section>
+
+<section class="collaboration">
+    <div class="eyebrow">Connect With Us</div>
+    <h2>Let's Explore New Ideas</h2>
+    <p>
+        We welcome academic engagement, research discussions,
+        and collaborative opportunities across civil engineering disciplines.
+    </p>
+
+    <a href="index.html#contact" class="contact-button">
+        Get in Touch
+    </a>
+</section>
 
 <footer>
-<p>NEXCIV | Independent Multidisciplinary Civil Engineering Research Laboratory</p>
-<p>Engineering Tomorrow, Through Research Today.</p>
-<p>© 2026 NEXCIV. All rights reserved.</p>
+    <div class="footer-logo">NEX<span>CIV</span></div>
+    <p>Independent Multidisciplinary Civil Engineering Research Laboratory</p>
+    <p>Engineering Tomorrow, Through Research Today.</p>
+    <p style="margin-top:15px;">© 2026 NEXCIV. All Rights Reserved.</p>
 </footer>
 
 </body>
 </html>
+
